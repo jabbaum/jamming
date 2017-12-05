@@ -22,13 +22,13 @@ class App extends React.Component {
   addTrack(track) {
     let updatedplaylist = this.state.playlistTracks;
     if (this.state.playlistTracks.indexOf(track) === -1) {
-      updatedplaylist = updatedplaylist.push(track);
+      updatedplaylist.push(track);
       this.setState({ playlistTracks: updatedplaylist });
     }
   }
   removeTrack(track) {
     let updatedplaylist = this.state.playlistTracks;
-    updatedplaylist.splice(this.state.updatedplaylist.indexOf(track), 1);
+    updatedplaylist.splice(this.state.playlistTracks.indexOf(track), 1);
     this.setState({playlistTracks: updatedplaylist});
   }
   updatePlaylistName(name) {

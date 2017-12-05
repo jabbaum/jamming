@@ -1,5 +1,5 @@
 let accessToken;
-const client_id = 'your client id here';
+const client_id = 'bc048224dd8c4f27bbde7d315c4f62b7';
 const redirect_uri = "http://localhost:3000/";
 const Spotify = {
   getAccessToken() {
@@ -23,6 +23,7 @@ const Spotify = {
         }
   },
   search(searchTerm) {
+    const accessToken = Spotify.getAccessToken();
     return fetch('https://cors-anywhere.herokuapp.com/' + `https://api.spotify.com/v1/search?type=track&q=${searchTerm}&limit=10`, {
             headers: {Authorization: `Bearer ${accessToken}`}
         }
